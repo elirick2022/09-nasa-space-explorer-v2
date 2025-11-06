@@ -142,3 +142,108 @@ button:hover {
   font-size: 48px;
   margin-bottom: 20px;
 }
+
+/* ==========================================================
+   NASA Space Explorer Enhancements (Modal, Hover, etc.)
+   ========================================================== */
+
+/* Hover Zoom Effect (LevelUp) */
+.gallery-item img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Loading and error messages */
+.loading,
+.error {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* 🪐 Modal Overlay */
+#modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+/* Modal Content */
+#modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  color: #000;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Image */
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Close Button */
+#modal-close,
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+#modal-close:hover {
+  color: #ff0000;
+}
+
+/* Simple fade animation for modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* NASA-inspired accent color tweaks */
+button {
+  background-color: #0b3d91; /* NASA deep blue */
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #1a5ed9;
+}
+
+/* Optional random fact styling (if you add it above the gallery) */
+#random-fact {
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 10px;
+}
