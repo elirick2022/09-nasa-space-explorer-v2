@@ -115,6 +115,45 @@ modal.addEventListener("click", e => {
 });
 
 // ==========================
+// � DISPLAY RANDOM SPACE FACT
+// ==========================
+function displayRandomFact() {
+  const factText = document.querySelector("#factText");
+  // Pick a random fact from the spaceFacts array
+  const randomFact = spaceFacts[Math.floor(Math.random() * spaceFacts.length)];
+  factText.textContent = "Space Fact: " +randomFact;
+}
+
+// Display a random fact when the page loads
+displayRandomFact();
+
+// ==========================
+// 🌙 DARK MODE TOGGLE
+// ==========================
+const darkModeToggle = document.querySelector("#darkModeToggle");
+
+// Check if user has a saved preference
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark-mode");
+  darkModeToggle.textContent = "☀️";
+}
+
+// Toggle dark mode on button click
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  
+  // Update button icon
+  if (document.body.classList.contains("dark-mode")) {
+    darkModeToggle.textContent = "☀️";
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    darkModeToggle.textContent = "🌙";
+    localStorage.setItem("darkMode", "disabled");
+  }
+}
+
+// ==========================
 // 💫 EVENT LISTENERS
 // ==========================
 getImagesButton.addEventListener("click", fetchSpaceImages);
+darkModeToggle.addEventListener("click", toggleDarkMode);
