@@ -131,7 +131,15 @@ button:hover {
   border-radius: 4px;
 }
 
+.gallery-item h3 {
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
 .gallery-item p {
+  text-align: center;
   margin-top: 10px;
   padding: 5px;
   font-size: 14px;
